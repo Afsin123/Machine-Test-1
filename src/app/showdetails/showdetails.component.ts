@@ -1,4 +1,6 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataserviceService } from '../services/dataservice.service';
 
 @Component({
@@ -7,11 +9,13 @@ import { DataserviceService } from '../services/dataservice.service';
   styleUrls: ['./showdetails.component.css']
 })
 export class ShowdetailsComponent implements OnInit {
+  details:any
 
-  constructor( private ds: DataserviceService ) {
-    this.ds.showDetails
+  constructor( public ds: DataserviceService, private router:Router ) {
+    this.details=this.ds.register
+    console.log(this.details);
    }
-
+   
   ngOnInit(): void {
   }
 

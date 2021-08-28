@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     firstname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
     lastname:['', [Validators.required,Validators.pattern('[a-zA-Z]*')]],
     email:['', [Validators.required, Validators.email ] ],
-
+    phone:['', [Validators.required, Validators.pattern('[0-9]*'), Validators.minLength(10)]]
   })
 
   constructor(private router:Router, private fb:FormBuilder, private ds: DataserviceService) { }
@@ -29,19 +29,47 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-
-    console.log(this.registerForm.get('uname')?.errors);
+   // console.log(this.registerForm.value.firstname);
+    
+	//  var firstname=this.firstname
+  //  var lastname = this.lastname
+  //  var email= this.email
+  //  var phone = this.phone
+  //  var user={
+  //    firstname:firstname,
+  //    lastname: lastname,
+  //    email: email,
+  //    phone: phone
+  //  }
+  //  console.log(user);
+   
+   //localStorage.setItem(user.firstname,JSON.stringify(user))
+   
+   //alert("saved...")
+    //console.log(this.registerForm.get('firstname')?.errors);
     
     if (this.registerForm.valid) {
+      // console.log(this.registerForm.value.firstname);
+      // console.log(this.registerForm.value.lastname);
+      // console.log(this.registerForm.value.email);
+      // console.log(this.registerForm.value.phone);
+      
+      
+      
+      
       var firstname = this.registerForm.value.firstname;
       var lastname = this.registerForm.value.lastname;
       var email = this.registerForm.value.email;
       var phone = this.registerForm.value.phone;
+
+      //console.log(this.registerForm.value.firstname);
+      
       
       // var firstname = this.firstname
       // var lastname = this.lastname
       // var email = this.email
       // var phone = this.phone
+      
 
       var result = this.ds.register(firstname, lastname,email,phone);
       if (result) {
@@ -56,8 +84,9 @@ export class RegisterComponent implements OnInit {
     else{
       alert("Invalid Form")
     }
-  }
+  // }
 }
+  }
 
 
      

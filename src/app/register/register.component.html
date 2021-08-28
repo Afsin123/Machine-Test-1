@@ -7,7 +7,7 @@
                    
                         <h4> Registration Form </h4>
                        
-                        <form [formGroup]="registerForm" ngSubmit="register()">
+                        <form [formGroup]="registerForm" (ngSubmit)="register()">
                         
                         <input type="text" id="firstname" class ="text" name ="firstname" formControlName="firstname"  placeholder="First Name"> <br> <br> 
                         <div *ngIf="(this.registerForm.get('firstname')?.touched || this.registerForm.get('firstname')?.dirty )&& this.registerForm.get('firstname')?.errors" class="errors"> Invalid firstname </div> <br>
@@ -21,7 +21,7 @@
                         <input type="text" id="phone" class ="text" name = "phone" formControlName ="phone"  placeholder="phone number"> <br> <br>
                         <div *ngIf="(this.registerForm.get('phone')?.touched || this.registerForm.get('phone')?.dirty )&& this.registerForm.get('phone')?.errors" class="errors"> Invalid phone </div> <br>
 
-                        <input type="submit" value="Submit" class="button buttonl" > <br>
+                        <input type="submit" value="Submit" class="button buttonl"  > <br>
                         </form>
                 
                 </div>

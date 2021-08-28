@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataserviceService } from '../services/dataservice.service';
 
 @Component({
   selector: 'app-display',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  constructor() { }
+  constructor( public ds:DataserviceService, private router:Router) { }
 
   ngOnInit(): void {
   }
