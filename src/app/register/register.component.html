@@ -1,0 +1,33 @@
+ 
+<div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="main" style="margin-top: 50px; background-color: rgb(255, 255, 255); text-align: center; ">
+                   
+                        <h4> Registration Form </h4>
+                       
+                        <form [formGroup]="registerForm" ngSubmit="register()">
+                        
+                        <input type="text" id="firstname" class ="text" name ="firstname" formControlName="firstname"  placeholder="First Name"> <br> <br> 
+                        <div *ngIf="(this.registerForm.get('firstname')?.touched || this.registerForm.get('firstname')?.dirty )&& this.registerForm.get('firstname')?.errors" class="errors"> Invalid firstname </div> <br>
+         
+                        <input type="text" id="lastname" class ="text" name = "lastname " formControlName ="lastname"  placeholder="Last Name"> <br>  <br>
+                        <div *ngIf="(this.registerForm.get('lastname')?.touched || this.registerForm.get('lastname')?.dirty )&& this.registerForm.get('lastname')?.errors" class="errors"> Invalid Lastname </div> <br>
+                        
+                        <input type="email"  id="email" class ="text" name = "email " formControlName ="email"  placeholder="Email Id"> <br> <br>
+                        <div *ngIf="(this.registerForm.get('email')?.touched || this.registerForm.get('email')?.dirty )&& this.registerForm.get('email')?.errors" class="errors"> Invalid Email ID</div> <br>
+                        
+                        <input type="text" id="phone" class ="text" name = "phone" formControlName ="phone"  placeholder="phone number"> <br> <br>
+                        <div *ngIf="(this.registerForm.get('phone')?.touched || this.registerForm.get('phone')?.dirty )&& this.registerForm.get('phone')?.errors" class="errors"> Invalid phone </div> <br>
+
+                        <input type="submit" value="Submit" class="button buttonl" > <br>
+                        </form>
+                
+                </div>
+            </div>
+                <div class="col-4"></div>
+           
+        </div>
+    </div> 
+    
