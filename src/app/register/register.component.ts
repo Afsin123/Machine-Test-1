@@ -15,6 +15,10 @@ export class RegisterComponent implements OnInit {
   lastname =""
   email=""
   phone=""
+  currentuser=""
+  currentfname=""
+  currentlname=""
+  currentemail=""
 
   registerForm = this.fb.group({
     firstname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
@@ -61,7 +65,7 @@ export class RegisterComponent implements OnInit {
       var lastname = this.registerForm.value.lastname;
       var email = this.registerForm.value.email;
       var phone = this.registerForm.value.phone;
-
+      var currentUser= this.registerForm.value.phone;
       //console.log(this.registerForm.value.firstname);
       
       
@@ -73,6 +77,7 @@ export class RegisterComponent implements OnInit {
 
       var result = this.ds.register(firstname, lastname,email,phone);
       if (result) {
+        
         alert("Registration Successful!!")
         this.router.navigateByUrl("showdetails") 
       }

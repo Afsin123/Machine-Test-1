@@ -9,11 +9,11 @@ import { DataserviceService } from '../services/dataservice.service';
   styleUrls: ['./showdetails.component.css']
 })
 export class ShowdetailsComponent implements OnInit {
-  details:any
+  displays:any
 
   constructor( public ds: DataserviceService, private router:Router ) {
-    this.details=this.ds.register
-    console.log(this.details);
+    this.displays=this.ds.display()
+    console.log(this.displays);
    }
    
   ngOnInit(): void {
